@@ -1,0 +1,52 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon {
+    position: absolute; /* Kein Absolut mehr */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.trapezoid {
+    border-bottom: 65px solid #555;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    height: 0;
+    width: 110px;
+}
+
+.rotatable {
+    position: relative; /* Erlaubt Positionierung der Kinder relativ zur Rotationsgruppe */
+    display: flex; /* Flexbox für saubere Zentrierung */
+    align-items: center;
+    justify-content: center;
+    top: 40px;
+    rotate: 45deg; /* Rotieren */
+}
+
+.circle {
+    height: 125px;
+    width: 125px;
+    background-color: #bbb;
+    border-radius: 50%;
+    position: relative; /* Ankerpunkt für das kleine Trapez */
+}
+
+.small-trapezoid {
+    /* border-bottom: 15px solid #555; */
+    border-bottom: 15px solid #bfc842;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    height: 0;
+    width: 10px;
+    position: absolute; /* Über den Kreis positionieren */
+    top: -14px; /* Nach oben verschieben, um die Überlappung zu schaffen */
+}
