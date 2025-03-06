@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mobile & Desktop Rotation</title>
+    <title>Circular Slider</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -16,6 +16,12 @@
         </div>
         <div class="trapezoid"></div>
     </div>
+
+    <svg class="circular-slider" viewBox="0 0 200 200">
+        <!-- Beschränkt den Track auf einen Bogen -->
+        <path class="track" d="M 100,10 A 90,90 0 0,1 190,100" />
+        <circle class="thumb" cx="190" cy="100" r="8"></circle>
+    </svg>    
 
     <script src="js/script.js"></script>
 </body>

@@ -8,7 +8,7 @@ body {
 }
 
 .icon {
-    position: absolute; /* Kein Absolut mehr */
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -24,12 +24,12 @@ body {
 }
 
 .rotatable {
-    position: relative; /* Erlaubt Positionierung der Kinder relativ zur Rotationsgruppe */
-    display: flex; /* Flexbox für saubere Zentrierung */
+    position: relative;
+    display: flex;
     align-items: center;
     justify-content: center;
     top: 40px;
-    rotate: 45deg; /* Rotieren */
+    rotate: 210deg;
 }
 
 .circle {
@@ -37,16 +37,42 @@ body {
     width: 125px;
     background-color: #bbb;
     border-radius: 50%;
-    position: relative; /* Ankerpunkt für das kleine Trapez */
+    position: relative;
 }
 
 .small-trapezoid {
-    /* border-bottom: 15px solid #555; */
     border-bottom: 15px solid #bfc842;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
     height: 0;
     width: 10px;
-    position: absolute; /* Über den Kreis positionieren */
-    top: -14px; /* Nach oben verschieben, um die Überlappung zu schaffen */
+    position: absolute;
+    top: -14px;
+}
+
+.circular-slider {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    height: 350px;
+    z-index: 2;
+    pointer-events: none; /* Slider selbst blockiert keine Interaktionen */
+}
+
+.track {
+    fill: none;
+    stroke: #ddd;
+    stroke-width: 10;
+    stroke-linecap: round;
+    pointer-events: none; /* Track bleibt passiv */
+}
+
+.thumb {
+    fill: #555;
+    pointer-events: all; /* Thumb kann Events empfangen */
+    cursor: grab;
+    stroke: #fff;
+    stroke-width: 2;
 }
